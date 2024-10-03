@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Techno Mag - Back from Silicon Valley, this engineer explains us how to access all the paid channels and platforms for FREE (Netflix / Disney + / SKY TV / etc..)
+    </title>
+    <link sizes="192x192" rel="shortcut icon" type="image/png" id="favicon" href="./img/favicon.png"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+     <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <main class="">
+      <section>
+        <nav class="bg-gray-700">
+          <p class="text-gray-200 text-center text-sm">Advertorial</p>
+        </nav>
+      </section>
+      <div class="flex justify-center">
+        <img src="./img/logo.jpg" alt="Logo" class="h-24 w-auto">
+      </div>
+      <!-- first section -->
+  <div class="container mx-auto p-6">
+    <div class="flex flex-wrap lg:flex-nowrap">
+        <!-- Left Side: Product Images -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center">
+            <div class="w-3/4">
+                <img id="mainImage" src="../img/side-img.jpg" alt="Product Image" class="w-full rounded-lg shadow-md">
+            </div>
+            <div class="flex justify-center mt-4 space-x-4">
+                <img src="./img/side-img.jpg" alt="Thumbnail 1" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-75" onclick="changeImage('./img/side-img.jpg')">
+                <img src="./img/f-banner-4.jpg" alt="Thumbnail 2" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-75" onclick="changeImage('./img/f-banner-4.jpg')">
+                <img src="./img/f-banner-6.jpg" alt="Thumbnail 4" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-75" onclick="changeImage('./img/f-banner-6.jpg')">
+                <img src="./img/f-banner-img.jpg" alt="Thumbnail 5" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-75" onclick="changeImage('./img/f-banner-img.jpg')">
+                <img src="./img/side-img.jpg" alt="Thumbnail 3" class="w-20 h-20 object-cover rounded-md cursor-pointer hover:opacity-75" onclick="changeImage('./img/side-img.jpg')">
+                
+            </div>
+        </div>
+        <!-- Right Side: Product Details -->
+        <div class="w-full lg:w-1/2 mt-6 lg:mt-0 lg:pl-12">
+            <div class="w-full mt-6 lg:mt-0">
+              <!-- Autoer Pic and Love Count -->
+              <div class="flex items-center mb-4">
+                <i class="fas fa-check-circle text-blue-400 ml-2"></i>
+                <span class="ml-2 font-bold">565,000+ others </span>
+                <span class="ml-2">love our Smart TV HDMI port.</span> 
+              </div>
+              <!-- Product Name -->
+              <h2 class="text-2xl font-bold text-gray-800 mb-4">all TVs around the world have been equipped with an HDMI port Box capable</h2>
+              <!-- Features with Checkmarks -->
+              <div class="mb-4">
+                  <div class="flex items-center mb-2">
+                      <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                      <span>Small box that plugs into the HDMI port on your TV</span>
+                  </div>
+                  <div class="flex items-center mb-2">
+                      <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                      <span>High-quality material</span>
+                  </div>
+              </div>
+             <!-- Shipping Info -->
+             <div class="flex items-center mb-4">
+              <i class="fas fa-truck text-gray-600 mr-2"></i>
+              <span>Free shipping</span>
+          </div>
+            <!-- Price -->
+            <div class="my-4 flex gap-4">
+              <p class="text-2xl font-bold text-green-600">€10</p>
+              <p class="text-xl text-gray-500 line-through">€100.00</p>
+              <p></p>
+          </div>
+            <!-- Sale and Stock Info -->
+            <div class="mb-4">
+              <p class="mb-4" >we only have a few left in stock!</p>
+          </div>
+              <!-- Counter Display -->
+                <div class="flex items-center mb-4 justify-center">
+                  <i class="fas fa-hourglass-half text-gray-600 mr-2"></i>
+                  <span><span id="stock-count" class="font-bold">10</span> Smart Ports left in stock.</span>
+              </div>
+              <!-- Add to Cart Button -->
+              <button type="submit" class="flex items-center justify-center w-full  px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+                  <i class="fas fa-cart-plus mr-2 text-center"></i>
+                  Add to Cart
+              </button>
+        </div>
+    </div>
+</div>
+  <!-- first section end -->
+</main>
+<footer>
+  <div class="bg-gray-700 py-14">
+    <p class="max-w-5xl mx-auto text-gray-400 text-center text-sm">This is a sponsored article and not a real news article, or blog. This page can receive compensation for each click or sale made via this site.</p>
+    <p class="max-w-5xl mt-2 mx-auto text-gray-400 text-center text-sm flex justify-center">
+      <a href="#">Legal Notices</a><a href="#" class="ml-2"> - Privacy Policies</a><a href="#"class="ml-2"> - Contact</a>
+  </div>
+</footer>
+  <script>
+    // first section JS
+    function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+    }
+// Initialize or retrieve the stock count from localStorage
+let stockCount = parseInt(localStorage.getItem('stockCount')) || 10; // Starting value if not set
 
+// Function to update the stock count
+function updateStockCount() {
+    // Check if the count is 0
+    if (stockCount <= 0) {
+        stockCount = 10; // Reset to 10 if count is 0
+    } else {
+        // Decrease the count
+        stockCount--;
+    }
+
+    // Save the new count to localStorage
+    localStorage.setItem('stockCount', stockCount);
+
+    // Update the span element with the new count
+    document.getElementById('stock-count').textContent = stockCount;
+}
+
+// Call the function on page load
+updateStockCount();
+
+    let lastScrollTop = 0;
+      const stickySection = document.querySelector('.sticky-cta-section-v1');
+
+      window.addEventListener('scroll', () => {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          if (scrollTop > lastScrollTop) {
+              // Scrolling down
+              stickySection.classList.add('hidden');
+          } else {
+              // Scrolling up
+              stickySection.classList.remove('hidden');
+          }
+          
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+    });
+  </script>
+    
+  </body>
+</html>
